@@ -21,4 +21,13 @@ public class Employee {
     private String apellido;
     private String correo;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", correo='" + correo + '\'' +
+                '}';
+    }
 }
