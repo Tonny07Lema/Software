@@ -60,16 +60,52 @@ public class SoftwareApplication implements CommandLineRunner {
 		employeeRepository.save(employee4);
 		employeeRepository.save(employee5);
 
-		Employee employee = findId(employee1.getNombre());
+		Employee e1 = findId(employee1.getNombre());
+		Employee e2 = findId(employee2.getNombre());
+		Employee e3 = findId(employee3.getNombre());
+		Employee e4 = findId(employee4.getNombre());
+		Employee e5 = findId(employee5.getNombre());
 
 		Nota nota1 = Nota.builder()
 				.matematica(7.25)
 				.biologia(8.25)
 				.fisica(9.25)
-				.employee(employee)
+				.employee(e1)
+				.build();
+
+		Nota nota2 = Nota.builder()
+				.matematica(9.35)
+				.biologia(5.25)
+				.fisica(3.25)
+				.employee(e2)
+				.build();
+
+		Nota nota3 = Nota.builder()
+				.matematica(7.01)
+				.biologia(9.25)
+				.fisica(5.25)
+				.employee(e3)
+				.build();
+
+		Nota nota4 = Nota.builder()
+				.matematica(5.25)
+				.biologia(2.25)
+				.fisica(1.25)
+				.employee(e4)
+				.build();
+
+		Nota nota5 = Nota.builder()
+				.matematica(10)
+				.biologia(10)
+				.fisica(10)
+				.employee(e5)
 				.build();
 
 		notaReoisitory.save(nota1);
+		notaReoisitory.save(nota2);
+		notaReoisitory.save(nota3);
+		notaReoisitory.save(nota4);
+		notaReoisitory.save(nota5);
 	}
 	public Employee findId(String nombre){
 		return employeeRepository.buscaNombreEmployee(nombre);
